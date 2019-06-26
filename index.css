@@ -1,0 +1,630 @@
+body
+{
+    font-family: 'Spectral', serif;
+}
+
+.buttons
+{
+    display: grid;
+    grid-template-areas:
+    "start stop";
+    justify-content: space-evenly;
+    margin-top: 3.5rem;
+}
+#timerText
+{
+    margin: 0 auto;
+    padding: 0;
+}
+#inputTimer
+{
+    width: auto;
+    display: grid;
+    grid-template-areas: 
+    "hours mins secs button";
+    justify-items: center;
+    padding: 0;
+    margin: 0 auto;
+
+}
+#countdownText #inputTimer
+{
+    display: inline;
+}
+
+.timer select
+{
+    display: inline;
+    margin:2px;
+
+}
+.timer svg
+{
+    display: inline;
+}
+.timer p
+{
+    display: inline;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.timer
+{
+    width: 241px;
+    margin: 3rem auto 0 auto;
+    text-align: center;
+}
+.timerDone
+{
+    animation: timerDone 1s ease infinite;
+}
+@keyframes timerDone
+{
+    0%{stroke: #ff7979}
+    50%{stroke: #6ab04c}
+    100%{stroke: #ff7979}
+}
+
+#jumbotronAlarm
+{
+    width: 500px;
+    height: 600px;
+
+}
+.progress-ring__circle
+{
+    transition: 0.35s stroke-dashoffset;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+}
+
+
+
+
+.moveCardOut
+{
+    animation: moveCardOut 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.moveCardIn
+{
+    animation-delay: 2s;
+    animation: moveCardIn 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes moveCardOut
+{
+    0%
+    {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+        transform: translateX(200%);
+        
+    }
+}
+@keyframes moveCardIn
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateX(-200%);
+        visibility: hidden;
+        
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+
+
+#weatherInput a
+{
+    color: #f6e58d;
+    font-weight: 600;
+}
+
+#weatherInput p
+{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+#radioSpan input
+{
+    margin: .4rem;
+    padding: .4rem;
+}
+#radioSpan
+{
+    grid-area: unit;
+}
+#jumbotronWeather
+{
+    width: 600px;
+}
+.Hidden
+{
+    visibility: hidden;
+    position: absolute;
+    z-index: -5;
+}
+#changeLocation
+{
+    display: inline-block;
+    margin: 0;
+    grid-area: changeLocation;
+
+}
+.flyInWeatherInput
+{
+    animation: flyin .2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+@keyframes flyin
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateY(-200%);
+        visibility: hidden;
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+.flyOutWeatherInput
+{
+    animation: flyout .1s forwards;
+}
+@keyframes flyout
+{
+    0%
+    {
+        opacity: 1;
+        transform: translateY(0%);
+        visibility: visible;
+    }
+    100%
+    {
+        opacity: 0;
+        transform: translateY(-200%);
+        visibility: hidden;
+    }
+}
+#weatherInput
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "pcodeInput unit submitButton changeLocation";
+    place-items: center;
+    justify-content: space-evenly;
+    word-break: keep-all;
+    word-wrap: none;
+}
+#countryInput
+{
+    margin: .5rem;
+    padding: .2rem;
+    grid-area: CountyInput;
+    width: 7rem;
+}
+#pcodeInput
+{
+    margin: .5rem;
+    padding: .2rem;
+    grid-area: pcodeInput;
+    width: 5rem;
+}
+#weatherSubmit
+{
+    margin: .5rem;
+    padding: .2rem;
+    grid-area: submitButton;
+}
+
+.weatherContent
+{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "icon icon"
+    "currentCond temp"
+    "humidity feelsLike"
+    "wind .";
+}
+#iconImg
+{
+    width: 60px;
+    height: 60px;
+}
+#currentCond
+{
+    grid-area: currentCond;
+}
+#humidity
+{
+    grid-area: humidity;
+}
+#wind
+{
+    grid-area: wind;
+}
+#currentTemp
+{
+    grid-area: temp;
+}
+#maxTemp
+{
+    grid-area: tempMax;
+}
+#feelsLike
+{
+    grid-area: feelsLike;
+}
+
+hr
+{
+    margin: .3em;
+    padding:.2em;
+    border-color:#95afc0;
+}
+
+.loader
+{
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    background-color: #5b6467;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+.loadingText
+{
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #7ed6df;
+    font-size: 1.5rem
+
+}
+.box
+{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+.box .c 
+{
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border-left: 4px solid;
+    border-right: 4px solid;
+    border-top: 4px solid transparent !important;
+    border-bottom: 4px solid transparent !important;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    animation: rotate 3s infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.box .c1
+{
+    border-color: #c7ecee;
+    width: 240px;
+    height: 240px;
+    animation-delay: .2s;
+}
+.box .c2
+{
+    border-color: #badc58;
+    width: 200px;
+    height: 200px;
+    animation-delay: .4s;
+}
+.box .c3
+{
+    border-color: #ff7979;
+    width: 180px;
+    height: 180px;
+    animation-delay: .6s;
+}
+.box .c4
+{
+    border-color: #f0932b;
+    width: 160px;
+    height: 160px;
+    animation-delay: .8s;
+}
+
+.hideLoader
+{
+    animation: fadeLoader 2s forwards;
+}
+@keyframes fadeLoader
+{
+    0%
+    {
+        top: 0%;
+        opacity: 1;
+    }
+    100%
+    {
+        top:-150%;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+@keyframes rotate
+{
+    0%
+    {
+        transform: translate(-50%,-50%) rotate(0deg)
+    }
+    25%
+    {
+        transform: translate(-50%,-50%) rotate(-90deg)
+    }
+    50%
+    {
+        transform: translate(-50%,-50%) rotate(-180deg)
+    }
+    100%
+    {
+        transform: translate(-50%,-50%) rotate(-360deg)
+    }
+}
+.container
+{
+width: 100%;
+height: 100%;
+}
+.button
+{
+    display: block;
+    margin: 1rem auto 0 auto;
+}
+#selectImg
+{
+    /* z-index: 1; position:fixed; top:0; left:0; */
+    padding: 0; 
+    width: 50px; 
+    height: 50px; 
+    margin: 20px 25px 0 25px;
+}
+#homeIcon
+{
+    width: 50px;
+    height: 50px;
+    margin: 25px 25px 25px 25px;
+    transition: width .5s, height .3s, margin .5s;
+}
+#home
+{
+    display: block;
+    z-index: 1;
+    height: 100px; 
+    width: 100px;
+    margin-top: 21rem;
+}
+#alarmIcon
+{
+    width: 50px;
+    height: 50px;
+    margin: 25px 25px 25px 25px;
+    transition: width .5s, height .3s, margin .5s;
+}
+#alarm
+{
+    display: block;
+    z-index: 1;
+    height: 100px; 
+    width: 100px;
+    margin-top: 1rem;
+}
+#weatherIcon
+{
+    width: 50px;
+    height: 50px;
+    margin: 25px 25px 25px 25px;
+    transition: width .5s, height .3s, margin .5s;
+}
+#weather
+{
+    display: block;
+    z-index: 1;
+    height: 100px; 
+    width: 100px;
+    margin-top: 1rem;
+}
+
+#iconContainer a img:hover
+{
+    width:70px;
+    height:70px;
+    margin: 15px 15px 15px 15px;
+}
+#select:hover
+{
+    background-color: rgba(255, 255, 255, .23);
+    border: 2px;
+    border-color: rgba(255, 255, 255, .25);
+    border-style: inset;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#home:hover
+{
+    background-color: rgba(255, 255, 255, .23);
+    border: 2px;
+    border-color: rgba(255, 255, 255, .25);
+    border-style: inset;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#alarm:hover
+{
+    background-color: rgba(255, 255, 255, .23);
+    border: 2px;
+    border-color: rgba(255, 255, 255, .25);
+    border-style: inset;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#weather:hover
+{
+    background-color: rgba(255, 255, 255, .23);
+    border: 2px;
+    border-color: rgba(255, 255, 255, .25);
+    border-style: inset;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.jumbotron
+{
+    width: 600px;
+    display: block; 
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #9dc5c3;
+    background-image: linear-gradient(315deg, rgba(128, 128, 128, .7) 0%, rgba(94, 92, 92, .7) 74%);
+    box-shadow: 4px 4px 4px 4px rgba(157, 197, 195, .2);
+}
+.morning-body
+{
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #f5f186;
+    background-image: linear-gradient(315deg, #f5f186 0%, #9dfbc8 74%);
+    
+}
+.afternoon-body
+{
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #fdf86d;
+    background-image: linear-gradient(315deg, #fdf86d 0%, #bddcf1 44%);
+    
+}
+.night-body
+{
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #5b6467;
+    background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+    
+}
+
+#iconContainer
+{
+
+    background-color: rgba(255, 255, 255, .2);
+    box-shadow: 2px 2px 2px 2px (255, 255, 255, .08);
+}
+
+.gradientText
+{
+
+    color: whitesmoke;
+}
+
+/* Make icons and container not visible */
+.notVisible
+{
+    
+    opacity: 0;
+    animation: slideOut .3s ease-in-out;
+    padding: 0; 
+    width: 50px; 
+    height: 50px;
+    transform: translateY(-100%);
+}
+/* Make icons and container visible */
+.Visible
+{
+    animation: slideIn .3s ease-in-out;
+    width: 50px; 
+    height: 50px;
+    padding: 0; 
+}
+
+@keyframes slideIn 
+{
+    0%{opacity: 1;transform: translateY(-100%);}
+    25%{transform: translateY(-75%);}
+    50%{transform: translateY(-50%);}
+    75%{transform: translateY(-25%);}
+    100% {transform: translateY(0%);}
+}
+@keyframes slideOut
+{
+    0%{opacity: 1;transform: translateY(0%);}
+    25%{transform: translateY(-25%);opacity: .8;}
+    50%{transform: translateY(-50%);opacity: .6;}
+    75%{transform: translateY(-75%);opacity: .4;}
+    100% {transform: translateY(-100%);opacity:0;}
+}
+
+/*Rotate dotted selection box */
+.rotateIn
+{
+    animation: rotateIn .3s forwards;
+}
+
+@keyframes rotateIn 
+{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(12deg);}
+    50%{transform: rotate(24deg);}
+    75%{transform: rotate(36deg);}
+    100% {transform: rotate(45deg);}
+}
+.rotateOut
+{
+    animation: rotateOut .3s forwards;
+}
+@keyframes rotateOut 
+{
+    0%{transform: rotate(45deg);}
+    25%{transform: rotate(36deg);}
+    50%{transform: rotate(24deg);}
+    75%{transform: rotate(12deg);}
+    100% {transform: rotate(0deg);}
+}
